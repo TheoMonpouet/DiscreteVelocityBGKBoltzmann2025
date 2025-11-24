@@ -292,7 +292,7 @@ void save_err_to_file(valarray<double>& w, double t, int ti) {
     double E_ref  = sqrt(ref_diff.sum()  * Constants::dx * Constants::dy);
 
     // Writing error to file
-    string file_name = Constants::result_file_path + "/error" << Constants::error_file_suffix << ".txt";
+    string file_name = Constants::result_file_path + "/error" + Constants::error_file_suffix + ".txt";
     ofstream out_error(file_name, std::ios::app);
 
     out_error << E_diff/E_ref << "\n";
