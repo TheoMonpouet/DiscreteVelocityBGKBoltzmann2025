@@ -1,7 +1,7 @@
 # Discrete-Velocity BGK Boltzmann implementation
 ##### Author: Théo Monpouet Ekeram
 ##### Date: June 2025
-##### Thesis link: TODO
+##### Thesis link: [Discrete-Velocity BGK Boltzmann implementation](https://kth.diva-portal.org/smash/record.jsf?dswid=-4344&pid=diva2%3A1990584&c=1&searchType=SIMPLE&language=en&query=theo+monpouet&af=%5B%5D&aq=%5B%5B%5D%5D&aq2=%5B%5B%5D%5D&aqe=%5B%5D&noOfRows=50&sortOrder=author_sort_asc&sortOrder2=title_sort_asc&onlyFullText=false&sf=all)
 
 ##### Description:
 Parallel implemetation of the discrete velocity BGK Boltzmann method for the lattices D2Q7, D2Q9, D2Q13 in two dimensions and D3Q19 in three dimensions. Implemented in C++ using the Message Passing Interface ([MPI](https://www.mpich.org/static/docs/v3.1/www3/)) and Fastest Fourier Transform in the West ([FFTW](https://www.fftw.org)). In the cases where closed form reference solutions exists, the program can output the error in order to determine the rate of the hydrodynamic limit. In the case where no closed form exact solutions exist, the user can choose to save the simulated vorticity or velocity field to file, to analyse outside of the program.
