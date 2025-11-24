@@ -64,11 +64,12 @@ int main(int argc, char **argv) {
     MPI_Comm_rank(MPI_COMM_WORLD, &rank);
     MPI_Comm_size(MPI_COMM_WORLD, &size);
 
-    cout << "Input value for e: " << atof(argv[1]) << endl;
-
+    double e0 = atof(argv[1]);
+    if (rank == 0) cout << "Got epsilon input: " << e0 << endl;
+    
     // Initialize contants
     if (rank == 0) cout << "Init..." << endl;
-    Constants::initialize(size, rank);
+    Constants::initialize(size, rank, e0);
     Temp::initialize();
     if (rank == 0){
         cout << "epsilon: " << Constants::epsilon << endl;

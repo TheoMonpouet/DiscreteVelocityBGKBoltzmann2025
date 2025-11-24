@@ -231,7 +231,8 @@ struct Constants {
 
     
     // initialize(): Static method to initialize sizes, initial conditions and operators
-    static void initialize(int size_, int rank_) {
+    static void initialize(int size_, int rank_, double e0) {
+        epsilon = e0;
         set_sizes(size_, rank_);
         if (init_condition != "fromfile") set_initials();
         set_operators();
@@ -242,7 +243,7 @@ struct Constants {
 
 // Adjustable physical parameters
 const double Constants::nu = pow(10, -4);
-const double Constants::epsilon = 1;
+const double Constants::epsilon;
 const double Constants::Lx = 1.0;
 const double Constants::Ly = 1.0;
 const double Constants::T0 = 0.0;
