@@ -32,7 +32,7 @@ int mod(int a, int b) {
 struct Constants {
     // Adjustable physical parameters
     static const double nu;
-    static const double epsilon;
+    static double epsilon;
     static const double Lx;
     static const double Ly;
     static const double T0;
