@@ -40,7 +40,7 @@ struct Constants {
 
     // Adjustable Numerical parameters
     static const int N;
-    static const double dt;
+    static double dt;
 
     // Initial conditions
     static const string init_condition;
@@ -231,9 +231,15 @@ struct Constants {
 
     
     // initialize(): Static method to initialize sizes, initial conditions and operators
-    static void initialize(int size_, int rank_, double e0) {
+    static void initialize(int size_, int rank_, double e0, double dt0) {
+        dt = dt0;
         epsilon = e0;
         error_file_suffix = "_" + init_condition + "_e" + to_string(epsilon);
+
+        Nd = round(T1/dt);
+        TSCREEN = floor(T1 / (dt * Nsave));
+
+
         set_sizes(size_, rank_);
         if (init_condition != "fromfile") set_initials();
         set_operators();
@@ -252,7 +258,7 @@ const double Constants::T1 = 1;
 
 // Adjustable Numerical parameters
 const int Constants::N = 128;
-const double Constants::dt = 2.0*pow(10, -4);
+const double Constants::dt;
 
 
 // Initial condition
@@ -276,8 +282,8 @@ const int Constants::N_half = Constants::N/2 + 1;
 const double Constants::c_s = pow(1.0/3.0, 1.0/2.0);
 const double Constants::dx = Lx/N;
 const double Constants::dy = Ly/N;
-const int Constants::Nd = round(T1/dt);
-const int Constants::TSCREEN = floor(T1 / (dt * Nsave));
+const int Constants::Nd;
+const int Constants::TSCREEN;
 
 
 // MPI constants
