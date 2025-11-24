@@ -64,6 +64,8 @@ int main(int argc, char **argv) {
     MPI_Comm_rank(MPI_COMM_WORLD, &rank);
     MPI_Comm_size(MPI_COMM_WORLD, &size);
 
+    cout << "Input value for e: " << atof(argv[1]) << endl;
+
     // Initialize contants
     if (rank == 0) cout << "Init..." << endl;
     Constants::initialize(size, rank);
