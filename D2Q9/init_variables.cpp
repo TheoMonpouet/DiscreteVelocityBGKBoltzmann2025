@@ -233,6 +233,7 @@ struct Constants {
     // initialize(): Static method to initialize sizes, initial conditions and operators
     static void initialize(int size_, int rank_, double e0) {
         epsilon = e0;
+        error_file_suffix = "_" + init_condition + "_e" + to_string(epsilon);
         set_sizes(size_, rank_);
         if (init_condition != "fromfile") set_initials();
         set_operators();
@@ -264,7 +265,7 @@ const string Constants::init_file_path = "/"; // File path (folder) of where to 
 
 // Saving solution
 const string Constants::result_file_path = "/cfs/klemming/projects/supr/latticeboltzmann_2025/extension1/testD2Q9Tg/"; // File path of where to save solution (end with "/")
-const string Constants::error_file_suffix = "_" + Constants::init_condition + "_e" + to_string(Constants::epsilon);
+string Constants::error_file_suffix;
 const string Constants::saving_sol = "e"; // "w": Save vorticity, "e": save error, "we": save both (only applicable to IC "tg", for "ptg" only vorticity gets saved)
 const int Constants::Nsave = 1000; // Number of steps saved
 
