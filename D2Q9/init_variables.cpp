@@ -48,7 +48,7 @@ struct Constants {
 
     // Saving solution
     static const string result_file_path;
-    static const string error_file_suffix;
+    const string error_file_suffix;
     static const string saving_sol;
     static const int Nsave;
 
