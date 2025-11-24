@@ -57,8 +57,8 @@ struct Constants {
     static const double c_s;
     static const double dx;
     static const double dy;
-    static const int Nd;
-    static const int TSCREEN;
+    static int Nd;
+    static int TSCREEN;
 
 
     // MPI constants
@@ -258,7 +258,7 @@ const double Constants::T1 = 1;
 
 // Adjustable Numerical parameters
 const int Constants::N = 128;
-const double Constants::dt;
+double Constants::dt;
 
 
 // Initial condition
@@ -282,8 +282,8 @@ const int Constants::N_half = Constants::N/2 + 1;
 const double Constants::c_s = pow(1.0/3.0, 1.0/2.0);
 const double Constants::dx = Lx/N;
 const double Constants::dy = Ly/N;
-const int Constants::Nd;
-const int Constants::TSCREEN;
+int Constants::Nd;
+int Constants::TSCREEN;
 
 
 // MPI constants
