@@ -48,6 +48,7 @@ struct Constants {
 
     // Saving solution
     static const string result_file_path;
+    static const string error_file_suffix;
     static const string saving_sol;
     static const int Nsave;
 
@@ -262,6 +263,7 @@ const string Constants::init_file_path = "/"; // File path (folder) of where to 
 
 // Saving solution
 const string Constants::result_file_path = "/cfs/klemming/projects/supr/latticeboltzmann_2025/extension1/testD2Q9Tg/"; // File path of where to save solution (end with "/")
+const string Constants::error_file_suffix = "_" + Constant::init_condition + "_e" + Constants::epsilon;
 const string Constants::saving_sol = "e"; // "w": Save vorticity, "e": save error, "we": save both (only applicable to IC "tg", for "ptg" only vorticity gets saved)
 const int Constants::Nsave = 1000; // Number of steps saved
 
