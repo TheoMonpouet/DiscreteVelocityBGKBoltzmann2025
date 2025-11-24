@@ -240,16 +240,16 @@ struct Constants {
 
 
 // Adjustable physical parameters
-const double Constants::nu = (5*pow(10, -6)) * 3;
-const double Constants::epsilon = 0.3;
+const double Constants::nu = pow(10, -4);
+const double Constants::epsilon = 1;
 const double Constants::Lx = 1.0;
 const double Constants::Ly = 1.0;
 const double Constants::T0 = 0.0;
-const double Constants::T1 = 4;
+const double Constants::T1 = 1;
 
 // Adjustable Numerical parameters
-const int Constants::N = 2048;
-const double Constants::dt = 2.0*pow(10, -6);
+const int Constants::N = 128;
+const double Constants::dt = 2.0*pow(10, -4);
 
 
 // Initial condition
@@ -261,8 +261,8 @@ const string Constants::init_file_path = "/"; // File path (folder) of where to 
 
 
 // Saving solution
-const string Constants::result_file_path = "/"; // File path of where to save solution (end with "/")
-const string Constants::saving_sol = "we"; // "w": Save vorticity, "e": save error, "we": save both (only applicable to IC "tg", for "ptg" only vorticity gets saved)
+const string Constants::result_file_path = "/cfs/klemming/projects/supr/latticeboltzmann_2025/extension1/testD2Q9Tg/"; // File path of where to save solution (end with "/")
+const string Constants::saving_sol = "e"; // "w": Save vorticity, "e": save error, "we": save both (only applicable to IC "tg", for "ptg" only vorticity gets saved)
 const int Constants::Nsave = 1000; // Number of steps saved
 
 
