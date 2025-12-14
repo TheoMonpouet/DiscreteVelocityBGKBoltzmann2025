@@ -257,7 +257,7 @@ const double Constants::T0 = 0.0;
 const double Constants::T1 = 1;
 
 // Adjustable Numerical parameters
-const int Constants::N = 128;
+const int Constants::N = 16;
 double Constants::dt;
 
 
